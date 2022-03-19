@@ -8,9 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            LocationsView()
+                .tabItem {
+                    Label("Locations", systemImage: Constants.Icons.location)
+                }
+
+            BossesView()
+                .tabItem {
+                    Label("Bosses", systemImage: Constants.Icons.boss)
+                }
+        }
     }
 }
 
