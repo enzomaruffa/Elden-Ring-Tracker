@@ -9,9 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State var progress: CGFloat = 0.5
+    @State var spoiler: Bool = false
+    
     var body: some View {
+//        ProgressRectangleView(progress: $progress, spoiler: $spoiler)
         TabView {
-            LocationsView()
+            LocationsView(store: LocationsViewStore())
                 .tabItem {
                     Label("Locations", systemImage: Constants.Icons.location)
                 }

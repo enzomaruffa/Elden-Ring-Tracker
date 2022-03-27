@@ -11,18 +11,16 @@ class SavedLocation: Codable {
     let name: String
     
     var checkedBosses: [Int]
+    var collectibes: [CollectibeItemSet] = []
     
-    var goldenSeedsFound: Int
-    var sacredTearsFound: Int
-    var crystalTearsFound: Int
-    var dragonHeartsFound: Int
-    
-    init(name: String, checkedBosses: [Int] = [], goldenSeedFound: Int = 0, sacredTearsFound: Int = 0, crystalTearsFound: Int = 0, dragonHeartsFound: Int = 0) {
+    init(name: String, checkedBosses: [Int] = [], collectibles: [CollectibeItemSet] = []) {
         self.name = name
         self.checkedBosses = checkedBosses
-        self.goldenSeedsFound = goldenSeedFound
-        self.sacredTearsFound = sacredTearsFound
-        self.crystalTearsFound = crystalTearsFound
-        self.dragonHeartsFound = dragonHeartsFound
+        self.collectibes = collectibles
     }
+}
+
+struct CollectibeItemSet: Codable {
+    let type: CollectableItemType
+    let amount: Int
 }

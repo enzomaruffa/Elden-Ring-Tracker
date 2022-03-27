@@ -80,7 +80,7 @@ class LocationRepository: ObservableObject {
         gameDataRepository.update(gameData: newGameData)
     }
     
-    func update(sacredTears: Int, in location: String) {
+    func update(itemType: CollectableItemType, toAmount amount: Int, in location: String) {
         guard let newGameData = lastSavedGameData,
               let savedLocation = newGameData
                 .savedLocations
@@ -90,60 +90,15 @@ class LocationRepository: ObservableObject {
             return
         }
         
-        savedLocation.sacredTearsFound = sacredTears
-        newGameData.savedLocations[index] = savedLocation
-        
-        gameDataRepository.update(gameData: newGameData)
-    }
-    
-    func update(goldenSeeds: Int, in location: String) {
-        guard let newGameData = lastSavedGameData,
-              let savedLocation = newGameData
-                .savedLocations
-                .first(where: { $0.name == location }),
-              let index = newGameData.savedLocations.firstIndex(where: { $0.name == savedLocation.name })
-        else {
-            return
+        let newSet = CollectibeItemSet(type: itemType, amount: amount)
+        if let index = savedLocation.collectibes.firstIndex(where: { $0.type == itemType }) {
+            savedLocation.collectibes[index] = newSet
+        } else {
+            savedLocation.collectibes.append(newSet)
         }
         
-        savedLocation.goldenSeedsFound = goldenSeeds
         newGameData.savedLocations[index] = savedLocation
         
         gameDataRepository.update(gameData: newGameData)
-        
-    }
-    
-    func update(crystalTears: Int, in location: String) {
-        guard let newGameData = lastSavedGameData,
-              let savedLocation = newGameData
-                .savedLocations
-                .first(where: { $0.name == location }),
-              let index = newGameData.savedLocations.firstIndex(where: { $0.name == savedLocation.name })
-        else {
-            return
-        }
-        
-        savedLocation.crystalTearsFound = crystalTears
-        newGameData.savedLocations[index] = savedLocation
-        
-        gameDataRepository.update(gameData: newGameData)
-        
-    }
-    
-    func update(dragonHearts: Int, in location: String) {
-        guard let newGameData = lastSavedGameData,
-              let savedLocation = newGameData
-                .savedLocations
-                .first(where: { $0.name == location }),
-              let index = newGameData.savedLocations.firstIndex(where: { $0.name == savedLocation.name })
-        else {
-            return
-        }
-        
-        savedLocation.dragonHeartsFound = dragonHearts
-        newGameData.savedLocations[index] = savedLocation
-        
-        gameDataRepository.update(gameData: newGameData)
-        
     }
 }

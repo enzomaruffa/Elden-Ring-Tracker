@@ -30,4 +30,14 @@ class Boss {
         self.checked = checked
     }
     
+    init() {
+        id = -1
+        name = "..."
+        locationName = "..."
+        category = "..."
+        detailedLocation = nil
+        locationURL = nil
+        checked = false
+    }
+    
 }

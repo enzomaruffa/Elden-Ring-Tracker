@@ -11,10 +11,9 @@ class StaticGameData: Codable {
     
     static var data = [
         StaticLocation(name: "Ainsel River",
-                       goldenSeedCount: 2,
-                       sacredTearsCount: 0,
-                       crystalTearsCount: 0,
-                       dragonHeartsCount: 0,
+                       collectibes: [
+                        CollectibeItemSet(type: .goldenSeeds, amount: 2)
+                       ],
                        bosses: [
                         StaticBoss(id: 89, name: "Astel, Naturalborn of the Void", category: "Boss", detailedLocation: "??", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=167488"),
                         StaticBoss(id: 150, name: "Baleful Shadow", category: "Boss", detailedLocation: "", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=168633"),
@@ -24,10 +23,12 @@ class StaticGameData: Codable {
                        ]),
         
         StaticLocation(name: "Altus Plateau",
-                       goldenSeedCount: 15,
-                       sacredTearsCount: 2,
-                       crystalTearsCount: 8,
-                       dragonHeartsCount: 2,
+                       collectibes: [
+                        CollectibeItemSet(type: .goldenSeeds, amount: 15),
+                        CollectibeItemSet(type: .sacredTears, amount: 2),
+                        CollectibeItemSet(type: .crystalTears, amount: 8),
+                        CollectibeItemSet(type: .dragonHearts, amount: 2)
+                       ],
                        bosses: [
                         StaticBoss(id: 95, name: "2 x Tree Sentinels", category: "Boss", detailedLocation: "", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=167584"),
                         StaticBoss(id: 141, name: "Abductor Virgins x2", category: "Boss", detailedLocation: "Subterranean Inquisition Chamber", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=168514"),
@@ -90,10 +91,12 @@ class StaticGameData: Codable {
                        ]),
         
         StaticLocation(name: "Caelid",
-                       goldenSeedCount: 4,
-                       sacredTearsCount: 1,
-                       crystalTearsCount: 5,
-                       dragonHeartsCount: 7,
+                       collectibes: [
+                        CollectibeItemSet(type: .goldenSeeds, amount: 4),
+                        CollectibeItemSet(type: .sacredTears, amount: 1),
+                        CollectibeItemSet(type: .crystalTears, amount: 5),
+                        CollectibeItemSet(type: .dragonHearts, amount: 7)
+                       ],
                        bosses: [StaticBoss(id: 109, name: "3 Crystalians", category: "Boss", detailedLocation: "Sellia Hidaway", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=167921"),
                                 StaticBoss(id: 87, name: "Battlemage Hugues", category: "Boss", detailedLocation: "Sellia EvergaolBattlemage Hugues Spirit Ashes", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=167402"),
                                 StaticBoss(id: 108, name: "Beastman of Farum Azula", category: "Boss", detailedLocation: "Dragonbarrow Cave", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=167916"),
@@ -124,10 +127,9 @@ class StaticGameData: Codable {
                                 StaticBoss(id: 185, name: "Millicent", category: "Invasion", detailedLocation: "??", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=166650")]),
         
         StaticLocation(name: "Crumbling Farum Azula",
-                       goldenSeedCount: 2,
-                       sacredTearsCount: 0,
-                       crystalTearsCount: 0,
-                       dragonHeartsCount: 0,
+                       collectibes: [
+                        CollectibeItemSet(type: .goldenSeeds, amount: 2)
+                       ],
                        bosses: [
                         StaticBoss(id: 148, name: "Dragonlord Placidusax", category: "Boss", detailedLocation: "", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=168522"),
                         StaticBoss(id: 85, name: "Godskin Duo", category: "Boss", detailedLocation: "[Dragon Temple Altar] site of grac", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=167392"),
@@ -136,10 +138,7 @@ class StaticGameData: Codable {
                        ]),
         
         StaticLocation(name: "Deeproot Depths",
-                       goldenSeedCount: 0,
-                       sacredTearsCount: 0,
-                       crystalTearsCount: 0,
-                       dragonHeartsCount: 0,
+                       collectibes: [],
                        bosses: [
                         StaticBoss(id: 132, name: "Crucible Knight Siluria", category: "Boss", detailedLocation: "", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=168429"),
                         StaticBoss(id: 127, name: "Crucible Knight Sirulia", category: "Boss", detailedLocation: "Deeproot Depths", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=168281"),
@@ -149,10 +148,12 @@ class StaticGameData: Codable {
                        ]),
         
         StaticLocation(name: "Limgrave",
-                       goldenSeedCount: 8,
-                       sacredTearsCount: 5,
-                       crystalTearsCount: 7,
-                       dragonHeartsCount: 2,
+                       collectibes: [
+                        CollectibeItemSet(type: .goldenSeeds, amount: 8),
+                        CollectibeItemSet(type: .sacredTears, amount: 5),
+                        CollectibeItemSet(type: .crystalTears, amount: 7),
+                        CollectibeItemSet(type: .dragonHearts, amount: 2)
+                       ],
                        bosses: [
                         StaticBoss(id: 24, name: "Ancient Hero of Zamor", category: "Boss", detailedLocation: "Weeping EvergaolRadagaon's Scarseal", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=165411"),
                         StaticBoss(id: 6, name: "Beastman of Farum Azula", category: "Boss", detailedLocation: "Groveside Cave", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=164472"),
@@ -195,10 +196,12 @@ class StaticGameData: Codable {
                        ]),
         
         StaticLocation(name: "Liurnia",
-                       goldenSeedCount: 5,
-                       sacredTearsCount: 2,
-                       crystalTearsCount: 7,
-                       dragonHeartsCount: 5,
+                       collectibes: [
+                        CollectibeItemSet(type: .goldenSeeds, amount: 5),
+                        CollectibeItemSet(type: .sacredTears, amount: 2),
+                        CollectibeItemSet(type: .crystalTears, amount: 7),
+                        CollectibeItemSet(type: .dragonHearts, amount: 5)
+                       ],
                        bosses: [
                         StaticBoss(id: 40, name: "Magma Wyrm Makar", category: "Boss", detailedLocation: "??", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=166245"),
                         StaticBoss(id: 50, name: "Adan, Thief of Fire", category: "Boss", detailedLocation: "Flame of the Fell God", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=166505"),
@@ -238,10 +241,12 @@ class StaticGameData: Codable {
                        ]),
         
         StaticLocation(name: "Mountaintops of the Giants",
-                       goldenSeedCount: 6,
-                       sacredTearsCount: 2,
-                       crystalTearsCount: 5,
-                       dragonHeartsCount: 2,
+                       collectibes: [
+                        CollectibeItemSet(type: .goldenSeeds, amount: 6),
+                        CollectibeItemSet(type: .sacredTears, amount: 2),
+                        CollectibeItemSet(type: .crystalTears, amount: 5),
+                        CollectibeItemSet(type: .dragonHearts, amount: 2)
+                       ],
                        bosses: [
                         StaticBoss(id: 134, name: "2x Night's Cavalry", category: "Boss", detailedLocation: "Guarding the wagon in the Snowfields", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=168493"),
                         StaticBoss(id: 81, name: "Ancient Hero of Zamor", category: "Boss", detailedLocation: "Giant-Conquering Hero's Grave", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=167371"),
@@ -270,18 +275,14 @@ class StaticGameData: Codable {
                        ]),
         
         StaticLocation(name: "Roundtable Hold",
-                       goldenSeedCount: 0,
-                       sacredTearsCount: 0,
-                       crystalTearsCount: 0,
-                       dragonHeartsCount: 0,
+                       collectibes: [],
                        bosses: [ StaticBoss(id: 189, name: "Ensha of the Royal Remains", category: "Invasion", detailedLocation: "", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=167506"),
                                  StaticBoss(id: 200, name: "Mad Tongue Alberich", category: "Invasion", detailedLocation: "", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=168844")]),
         
         StaticLocation(name: "Siofra River",
-                       goldenSeedCount: 2,
-                       sacredTearsCount: 0,
-                       crystalTearsCount: 0,
-                       dragonHeartsCount: 0,
+                       collectibes: [
+                        CollectibeItemSet(type: .goldenSeeds, amount: 2)
+                       ],
                        bosses: [
                         StaticBoss(id: 104, name: "Ancestor Spirit", category: "Boss", detailedLocation: "Hallowhorn Grounds", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=167775"),
                         StaticBoss(id: 110, name: "Dragonkin Soldier", category: "Boss", detailedLocation: "", locationURL: "https://mapgenie.io/elden-ring/maps/the-lands-between?locationIds=167928"),

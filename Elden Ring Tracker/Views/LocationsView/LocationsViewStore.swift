@@ -1,35 +1,11 @@
 //
-//  LocationsView.swift
+//  LocationsViewStore.swift
 //  Elden Ring Tracker
 //
-//  Created by Enzo Maruffa on 13/03/22.
+//  Created by Enzo Maruffa on 19/03/22.
 //
 
-import SwiftUI
-
-struct LocationsView: View {
-    
-    @ObservedObject var store = LocationsViewStore()
-    
-    var body: some View {
-        ScrollView {    
-            VStack(alignment: .leading) {
-                ForEach($store.locations, id: \.uuid) { location in
-                    LocationRowView(location: location)
-                }
-            }
-            .padding()
-        }
-    }
-}
-
-struct LocationsView_Previews: PreviewProvider {
-    static var previews: some View {
-        LocationsView()
-    }
-}
-
-
+import Foundation
 import Combine
 class LocationsViewStore: ObservableObject {
     

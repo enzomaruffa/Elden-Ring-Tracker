@@ -14,15 +14,7 @@ class Location {
     
     let bosses: [Boss]
     
-    let goldenSeedCount: Int
-    let sacredTearsCount: Int
-    let crystalTearsCount: Int
-    let dragonHeartsCount: Int
-    
-    let goldenSeedFound: Int
-    let sacredTearsFound: Int
-    let crystalTearsFound: Int
-    let dragonHeartsFound: Int
+    var collectableItems: [Item]
     
     var bossesCompletedCount: Int {
         bosses.filter({ $0.checked }).count
@@ -30,22 +22,17 @@ class Location {
     
     var totalItemsCompleted: Int {
         bossesCompletedCount
-        + goldenSeedFound
-        + sacredTearsFound
-        + crystalTearsFound
-        + dragonHeartsFound
+        + collectableItems.map{ $0.amountExisting }.reduce(0, +)
     }
     
     var totalItems: Int {
         bosses.count
-        + goldenSeedCount
-        + sacredTearsCount
-        + crystalTearsCount
-        + dragonHeartsCount
+        + collectableItems.map{ $0.amountFound }.reduce(0, +)
     }
     
     var overallPercentage: Double {
-        Double(totalItemsCompleted) / Double(totalItems)
+        if (totalItems == 0) { return 1 }
+        return Double(totalItemsCompleted) / Double(totalItems)
     }
     
     init(staticLocation: StaticLocation, savedLocation: SavedLocation) {
@@ -58,15 +45,19 @@ class Location {
             )
         })
         
-        self.goldenSeedCount = staticLocation.goldenSeedCount
-        self.sacredTearsCount = staticLocation.sacredTearsCount
-        self.crystalTearsCount = staticLocation.crystalTearsCount
-        self.dragonHeartsCount = staticLocation.dragonHeartsCount
-        
-        self.goldenSeedFound = savedLocation.goldenSeedsFound
-        self.sacredTearsFound = savedLocation.sacredTearsFound
-        self.crystalTearsFound = savedLocation.crystalTearsFound
-        self.dragonHeartsFound = savedLocation.dragonHeartsFound
+        collectableItems = staticLocation.collectibes.map({ staticItem in
+            let foundAmount = savedLocation.collectibes.first(where: { $0.type == staticItem.type })?.amount ?? 0
+            
+            return Item(type: staticItem.type,
+                        amountFound: foundAmount,
+                        amountExisting: staticItem.amount)
+        })
     }
     
+    init() {
+        name = "Placeholder"
+        
+        bosses = []
+        collectableItems = []
+    }
 }

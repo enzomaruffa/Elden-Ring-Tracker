@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BossRowView: View {
-    @Binding var boss: Boss
+    @State var boss: Boss
     var body: some View {
         ZStack(alignment: .leading) {
             RoundedRectangle(cornerRadius: 16)
