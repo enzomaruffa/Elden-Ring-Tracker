@@ -53,4 +53,7 @@ class LocationViewStore: PausableObservableObject {
         locationRepository.update(itemType: type, toAmount: max(item.amountFound - 1, 0), in: locationName)
     }
     
+    func toggleBoss(bossID: Int) {
+        locationRepository.toggle(bossID: bossID)
+    }
 }

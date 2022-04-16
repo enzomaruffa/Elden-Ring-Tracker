@@ -12,31 +12,45 @@ struct BossView: View {
     @StateObject var store: BossViewStore
     
     var body: some View {
-        ZStack(alignment: .leading) {
-            RoundedRectangle(cornerRadius: 16)
-                .foregroundColor(Constants.Colors.cardBackground)
-            VStack(alignment: .leading, spacing: 8) {
+        ScrollView {
+            CustomImageView(url: "https://www.clickguarulhos.com.br/wp-content/uploads/2016/05/rato.jpg", desiredHeight: 255)
+            
+            VStack(alignment: .leading,
+                   spacing: Constants.Metrics.mainSpacing) {
+                HStack {
+                    Spacer()
+                }
                 Text(store.boss.name)
-                    .bold()
-                    .font(.title3)
-                HStack {
-                    HStack {
-                        Image(systemName: Constants.Icons.category)
-                        Text(store.boss.category)
-                    }
-                    
-                    HStack {
-                        Image(systemName: Constants.Icons.location)
-                        Text(store.boss.locationName)
-                    }
+                    .textStyle(Constants.TextModifiers.Headline())
+                Text(store.boss.name)
+                    .textStyle(Constants.TextModifiers.Body())
+                
+                CustomSeparator()
+                
+                if let detailedLocation = store.boss.detailedLocation {
+                    Text(detailedLocation)
+                        .textStyle(Constants.TextModifiers.Body())
                 }
-                HStack {
-                    Text("Felled: \(store.boss.checked ? "✅" : "🚫")")
-                }.onTapGesture {
+                
+                Button(action: {
                     store.toggleBoss()
+                }) {
+                    Text(store.boss.checked ? "FOE FELLED" : "FOE ALIVE")
+                        .bold()
+                        .textStyle(Constants.TextModifiers.Body())
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(
+                            store.boss.checked ? Constants.Colors.bossDone : Constants.Colors.bossNotDone)
+                        .animation(.default, value: store.boss.checked)
+                        .cornerRadius(Constants.Metrics.defaultCornerRadius)
                 }
-            }.padding()
-            .visibilityAwareObservables(observables: [store])
+            }
+           .padding(Constants.Metrics.mainSpacing)
         }
+        .background(Constants.Colors.pageBackground)
+        .ignoresSafeArea()
+        .padding(.bottom)
+        .visibilityAwareObservables(observables: [store])
     }
 }

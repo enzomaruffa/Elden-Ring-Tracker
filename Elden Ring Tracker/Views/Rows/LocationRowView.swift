@@ -18,20 +18,41 @@ struct LocationRowView: View {
             
             VStack(alignment: .leading) {
                 
-                AsyncImage(url: URL(string: "https://www.clickguarulhos.com.br/wp-content/uploads/2016/05/rato.jpg"),
-                           content: { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(height: 236, alignment: .center)
-                        .cornerRadius(16, corners: [.topLeft, .topRight])
-                        .clipped()
-                        
-                }, placeholder: {
-                    Text("Loading...")
-                })
-                .frame(height: 236, alignment: .center)
-                .clipped()
+                ZStack(alignment: .bottom) {
+                    CustomImageView(url: "https://www.clickguarulhos.com.br/wp-content/uploads/2016/05/rato.jpg", desiredHeight: 246)
+                    
+                    VStack {
+                        HStack {
+                            Spacer()
+                            PercentageCheckmarkView(percentage: CGFloat(location.overallPercentage))
+                                .frame(width: 60, height: 60, alignment: .center)
+                                .padding(.trailing, Constants.Metrics.halfSpacing)
+                                .padding(.top, Constants.Metrics.halfSpacing)
+                        }
+                        Spacer()
+                        HStack {
+                            ForEach(location.collectableItems, id: \.uuid) { item in
+                                
+                                VStack {
+                                    Image(systemName: item.type.iconName)
+                                        .padding(.bottom, Constants.Metrics.quarterSpacing)
+                                    Text("\(item.amountFound)/\(item.amountExisting)")
+                                        .textStyle(Constants.TextModifiers.SuperSmallCaption())
+                                }
+                                
+                                if item.uuid != location.collectableItems.last?.uuid {
+                                    Rectangle()
+                                        .frame(width: 1, height: 28)
+                                        .foregroundColor(.white)
+                                        .padding(.horizontal, Constants.Metrics.halfSpacing)
+                                }
+                            }
+                        }
+                    }
+                    .padding(.bottom, Constants.Metrics.halfSpacing)
+                    
+                    
+                }
                 
                 VStack(alignment: .leading, spacing: 8) {
                     Text(location.name)

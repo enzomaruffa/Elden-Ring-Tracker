@@ -19,9 +19,12 @@ class Constants {
     
     class Icons {
         static let boss = "person.3.sequence.fill"
-        static let completion = "checkmark.fill"
+        static let completion = "checkmark"
         static let location = "location.fill"
-        static let category = "location.fill"
+        static let category = "gauge"
+        
+        static let plus = "plus.square"
+        static let minus = "minus.square"
     }
     
     class Colors {
@@ -37,6 +40,9 @@ class Constants {
             Color(hex: "40DF9F"),
             Color(hex: "3ED598")
         ]), startPoint: .top, endPoint: .bottom)
+        
+        static let bossDone = Color(hex: "40DF9F")
+        static let bossNotDone = cardLightBackground
     }
     
     class Fonts {
@@ -48,6 +54,8 @@ class Constants {
         static let caption = Font.custom("SF Pro Display", size: 12).weight(.medium)
         
         static let itemTitle = Font.custom("SF Pro Display", size: 14).weight(.regular)
+        
+        static let superSmallCaption = Font.custom("SF Pro Display", size: 10).weight(.semibold)
     }
     
     class TextModifiers {
@@ -101,6 +109,15 @@ class Constants {
                 content
                     .font(Fonts.itemTitle)
                     .lineSpacing(16)
+                    .foregroundColor(Colors.fontNormal)
+            }
+        }
+        
+        struct SuperSmallCaption: ViewModifier {
+            func body(content: Content) -> some View {
+                content
+                    .font(Fonts.superSmallCaption)
+                    .lineSpacing(12.5)
                     .foregroundColor(Colors.fontNormal)
             }
         }

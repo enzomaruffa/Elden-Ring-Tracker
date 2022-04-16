@@ -15,7 +15,9 @@ struct LocationView: View {
     
     var body: some View {
         ScrollView {
-            SmokedImageView(url: "https://www.clickguarulhos.com.br/wp-content/uploads/2016/05/rato.jpg", desiredHeight: 255)
+            CustomImageView(url: "https://www.clickguarulhos.com.br/wp-content/uploads/2016/05/rato.jpg", desiredHeight: 255)
+            
+            CustomSeparator()
             
             VStack(alignment: .leading,
                    spacing: Constants.Metrics.mainSpacing) {
@@ -45,7 +47,9 @@ struct LocationView: View {
                     NavigationLink {
                         BossView(store: BossViewStore(bossID: boss.id))
                     } label: {
-                        BossRowView(boss: boss)
+                        BossRowView(boss: boss) {
+                            store.toggleBoss(bossID: boss.id)
+                        }
                     }
                     .isDetailLink(false)
                     .buttonStyle(PlainButtonStyle())

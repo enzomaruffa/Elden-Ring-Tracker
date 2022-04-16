@@ -12,7 +12,13 @@ struct BossLargeRowView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            SmokedImageView(url: "https://www.clickguarulhos.com.br/wp-content/uploads/2016/05/rato.jpg", desiredHeight: 255)
+            ZStack(alignment: .topTrailing) {
+                CustomImageView(url: "https://www.clickguarulhos.com.br/wp-content/uploads/2016/05/rato.jpg", desiredHeight: 255)
+                StatusCheckmarkView(checked: boss.checked)
+                    .frame(width: 41, height: 41)
+                    .padding(.top, Constants.Metrics.halfSpacing)
+                    .padding(.trailing, Constants.Metrics.halfSpacing)
+            }
             VStack(alignment: .leading) {
                 Text(boss.name)
                     .textStyle(Constants.TextModifiers.CardTitle())
@@ -22,13 +28,14 @@ struct BossLargeRowView: View {
                 
                 HStack {
                     TagView(iconName: Constants.Icons.location, text: boss.locationName)
+                    TagView(iconName: Constants.Icons.category, text: boss.category)
                 }
                 .padding(.top, Constants.Metrics.halfSpacing)
                 
             }.padding()
         }
-        .cornerRadius(Constants.Metrics.defaultCornerRadius)
         .background(Constants.Colors.cardBackground)
+        .cornerRadius(Constants.Metrics.defaultCornerRadius)
         
     }
 }

@@ -38,8 +38,11 @@
 		C0B8289A27F0DE38000D0314 /* ObservableObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8289927F0DE38000D0314 /* ObservableObject+.swift */; };
 		C0B8289C27F0DEFE000D0314 /* VisibilityAwareObservables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8289B27F0DEFE000D0314 /* VisibilityAwareObservables.swift */; };
 		C0DA80E0280A6EF200B77F1C /* BossLargeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80DF280A6EF200B77F1C /* BossLargeRowView.swift */; };
-		C0DA80E7280A700A00B77F1C /* SmokedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80E6280A700A00B77F1C /* SmokedImageView.swift */; };
+		C0DA80E7280A700A00B77F1C /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80E6280A700A00B77F1C /* CustomImageView.swift */; };
 		C0DA80E9280A720900B77F1C /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80E8280A720900B77F1C /* TagView.swift */; };
+		C0DA80EC280A763B00B77F1C /* StatusCheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80EB280A763B00B77F1C /* StatusCheckmarkView.swift */; };
+		C0DA80EE280A8CAE00B77F1C /* CustomSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80ED280A8CAE00B77F1C /* CustomSeparator.swift */; };
+		C0DA80F0280A940B00B77F1C /* PercentageCheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80EF280A940B00B77F1C /* PercentageCheckmarkView.swift */; };
 		C0E6485927DD7171005B78C5 /* Elden_Ring_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E6485827DD7171005B78C5 /* Elden_Ring_TrackerApp.swift */; };
 		C0E6485B27DD7171005B78C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E6485A27DD7171005B78C5 /* ContentView.swift */; };
 		C0E6485D27DD7173005B78C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E6485C27DD7173005B78C5 /* Assets.xcassets */; };
@@ -78,8 +81,11 @@
 		C0B8289927F0DE38000D0314 /* ObservableObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableObject+.swift"; sourceTree = "<group>"; };
 		C0B8289B27F0DEFE000D0314 /* VisibilityAwareObservables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityAwareObservables.swift; sourceTree = "<group>"; };
 		C0DA80DF280A6EF200B77F1C /* BossLargeRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BossLargeRowView.swift; sourceTree = "<group>"; };
-		C0DA80E6280A700A00B77F1C /* SmokedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokedImageView.swift; sourceTree = "<group>"; };
+		C0DA80E6280A700A00B77F1C /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		C0DA80E8280A720900B77F1C /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		C0DA80EB280A763B00B77F1C /* StatusCheckmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCheckmarkView.swift; sourceTree = "<group>"; };
+		C0DA80ED280A8CAE00B77F1C /* CustomSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSeparator.swift; sourceTree = "<group>"; };
+		C0DA80EF280A940B00B77F1C /* PercentageCheckmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageCheckmarkView.swift; sourceTree = "<group>"; };
 		C0E6485527DD7171005B78C5 /* Elden Ring Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Elden Ring Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E6485827DD7171005B78C5 /* Elden_Ring_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elden_Ring_TrackerApp.swift; sourceTree = "<group>"; };
 		C0E6485A27DD7171005B78C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -171,7 +177,6 @@
 				C0B3EE1A27E6A04200994158 /* LocationsView */,
 				C0B3EE1827E6A02800994158 /* Rows */,
 				C0B3EE1727E6A01C00994158 /* BossesView */,
-				C024860527E7B45700E6F7EC /* CollectableItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,9 +211,13 @@
 		C0DA80E1280A6F1F00B77F1C /* Atoms */ = {
 			isa = PBXGroup;
 			children = (
+				C0DA80ED280A8CAE00B77F1C /* CustomSeparator.swift */,
+				C024860527E7B45700E6F7EC /* CollectableItemView.swift */,
+				C0DA80EA280A762B00B77F1C /* StatusCheckmarkView */,
 				C0DA80E5280A6FF800B77F1C /* SmokedImageView */,
 				C0DA80E4280A6F4700B77F1C /* TagView */,
 				C0DA80E3280A6F2F00B77F1C /* ProgressRectangleView */,
+				C0DA80EF280A940B00B77F1C /* PercentageCheckmarkView.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -233,9 +242,17 @@
 		C0DA80E5280A6FF800B77F1C /* SmokedImageView */ = {
 			isa = PBXGroup;
 			children = (
-				C0DA80E6280A700A00B77F1C /* SmokedImageView.swift */,
+				C0DA80E6280A700A00B77F1C /* CustomImageView.swift */,
 			);
 			path = SmokedImageView;
+			sourceTree = "<group>";
+		};
+		C0DA80EA280A762B00B77F1C /* StatusCheckmarkView */ = {
+			isa = PBXGroup;
+			children = (
+				C0DA80EB280A763B00B77F1C /* StatusCheckmarkView.swift */,
+			);
+			path = StatusCheckmarkView;
 			sourceTree = "<group>";
 		};
 		C0E6484C27DD7171005B78C5 = {
@@ -348,7 +365,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0DA80EC280A763B00B77F1C /* StatusCheckmarkView.swift in Sources */,
 				C0B3EDFF27DDB57E00994158 /* BossesView.swift in Sources */,
+				C0DA80EE280A8CAE00B77F1C /* CustomSeparator.swift in Sources */,
 				C0B3EE0C27E69C5200994158 /* Text+.swift in Sources */,
 				C0B3EE0A27E698F200994158 /* Color+.swift in Sources */,
 				C0B3EDE627DD97AA00994158 /* SavedGameDataRepository.swift in Sources */,
@@ -368,6 +387,7 @@
 				C0B3EDF927DDAAA000994158 /* Boss.swift in Sources */,
 				C0B3EE0527DDBC3F00994158 /* Constants.swift in Sources */,
 				C0B3EDE427DD71B500994158 /* StaticBoss.swift in Sources */,
+				C0DA80F0280A940B00B77F1C /* PercentageCheckmarkView.swift in Sources */,
 				C0DA80E0280A6EF200B77F1C /* BossLargeRowView.swift in Sources */,
 				C0B3EE0127DDB58C00994158 /* LocationRowView.swift in Sources */,
 				C0B3EE1627E6A01800994158 /* BossesViewStore.swift in Sources */,
@@ -380,7 +400,7 @@
 				C0B3EE0727E697A400994158 /* SpoilerRepository.swift in Sources */,
 				C0B3EE2027E6AD2600994158 /* BossViewStore.swift in Sources */,
 				C0B8289A27F0DE38000D0314 /* ObservableObject+.swift in Sources */,
-				C0DA80E7280A700A00B77F1C /* SmokedImageView.swift in Sources */,
+				C0DA80E7280A700A00B77F1C /* CustomImageView.swift in Sources */,
 				C0B3EDF327DDA84E00994158 /* SavedGameData.swift in Sources */,
 				C0E6485927DD7171005B78C5 /* Elden_Ring_TrackerApp.swift in Sources */,
 			);

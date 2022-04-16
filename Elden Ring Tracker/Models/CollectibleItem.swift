@@ -50,13 +50,25 @@ enum CollectableItemType: String, Codable {
     var iconName: String {
         switch self {
         case .goldenSeeds:
-            return ""
+            return "brain"
         case .sacredTears:
-            return ""
+            return "drop.fill"
         case .crystalTears:
-            return ""
+            return "sparkle"
         case .dragonHearts:
-            return ""
+            return "heart.fill"
+        }
+    }
+    var colorHex: String {
+        switch self {
+        case .goldenSeeds:
+            return "F2D16D"
+        case .sacredTears:
+            return "0062FF"
+        case .crystalTears:
+            return "FFFFFF"
+        case .dragonHearts:
+            return "FF0000"
         }
     }
 }

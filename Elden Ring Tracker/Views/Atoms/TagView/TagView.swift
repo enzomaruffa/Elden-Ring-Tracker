@@ -13,7 +13,7 @@ struct TagView: View {
     
     var body: some View {
         HStack {
-            Image(systemName: Constants.Icons.location)
+            Image(systemName: iconName)
                 .foregroundColor(.white)
             Text(text)
                 .textStyle(Constants.TextModifiers.Caption())

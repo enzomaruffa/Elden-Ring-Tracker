@@ -28,12 +28,7 @@ struct LocationsView: View {
                         
                         Text("Here, a list of locations")
                             .textStyle(Constants.TextModifiers.Body())
-                        
-                        Rectangle()
-                            .frame(width: 148, height: 8, alignment: .center)
-                            .background(Constants.Colors.separator)
-                            .foregroundColor(.clear)
-                            .cornerRadius(12)
+                        CustomSeparator()
                     }
                     
                     VStack(alignment: .leading, spacing: Constants.Metrics.halfSpacing) {

@@ -9,30 +9,45 @@ import SwiftUI
 
 struct BossRowView: View {
     @State var boss: Boss
+    var closure: (() -> ())? = nil
+    
     var body: some View {
-        ZStack(alignment: .leading) {
-            RoundedRectangle(cornerRadius: 16)
-                .foregroundColor(Constants.Colors.cardBackground)
-            VStack(alignment: .leading, spacing: 8) {
+        HStack {
+            
+            ZStack(alignment: .topTrailing) {
+                CustomImageView(url: "https://www.clickguarulhos.com.br/wp-content/uploads/2016/05/rato.jpg", desiredWidth: 110)
+                    .frame(width: 110, alignment: .center)
+                    .cornerRadius(Constants.Metrics.defaultCornerRadius)
+                StatusCheckmarkView(checked: boss.checked)
+                    .frame(width: 16, height: 16)
+                    .padding(.top, Constants.Metrics.halfSpacing)
+                    .padding(.trailing, Constants.Metrics.halfSpacing)
+                    .onTapGesture {
+                        closure?()
+                    }
+            }
+            .padding(.vertical, Constants.Metrics.halfSpacing)
+            .padding(.leading, Constants.Metrics.halfSpacing)
+            
+            VStack(alignment: .leading) {
                 Text(boss.name)
-                    .bold()
-                    .font(.title3)
+                    .textStyle(Constants.TextModifiers.CardTitle())
+                    .padding(.bottom, Constants.Metrics.quarterSpacing/2)
+                Text(boss.name)
+                    .textStyle(Constants.TextModifiers.Caption())
+                
                 HStack {
-                    HStack {
-                        Image(systemName: Constants.Icons.category)
-                        Text(boss.category)
-                    }
-                    
-                    HStack {
-                        Image(systemName: Constants.Icons.location)
-                        Text(boss.locationName)
-                    }
+                    TagView(iconName: Constants.Icons.location, text: boss.locationName)
+                    TagView(iconName: Constants.Icons.category, text: boss.category)
                 }
-                HStack {
-                    Text("Felled: \(boss.checked ? "✅" : "🚫")")
-                }
+                .padding(.top, Constants.Metrics.quarterSpacing)
+                
             }.padding()
+            Spacer()
         }
+        .frame(maxWidth: .infinity)
+        .background(Constants.Colors.cardBackground)
+        .cornerRadius(Constants.Metrics.defaultCornerRadius)
     }
 }
 

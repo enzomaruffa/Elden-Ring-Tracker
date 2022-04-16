@@ -22,12 +22,12 @@ class Location {
     
     var totalItemsCompleted: Int {
         bossesCompletedCount
-        + collectableItems.map{ $0.amountExisting }.reduce(0, +)
+        + collectableItems.map{ $0.amountFound }.reduce(0, +)
     }
     
     var totalItems: Int {
         bosses.count
-        + collectableItems.map{ $0.amountFound }.reduce(0, +)
+        + collectableItems.map{ $0.amountExisting }.reduce(0, +)
     }
     
     var overallPercentage: Double {
