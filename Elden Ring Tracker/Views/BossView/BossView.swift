@@ -9,11 +9,11 @@ import Foundation
 import SwiftUI
 
 struct BossView: View {
-    @StateObject var store: BossViewStore
+    @ObservedObject var store: BossViewStore
     
     var body: some View {
         ScrollView {
-            CustomImageView(url: "https://www.clickguarulhos.com.br/wp-content/uploads/2016/05/rato.jpg", desiredHeight: 255)
+            CustomImageView(url: store.boss.imageURL, desiredHeight: 255)
             
             VStack(alignment: .leading,
                    spacing: Constants.Metrics.mainSpacing) {
@@ -22,8 +22,11 @@ struct BossView: View {
                 }
                 Text(store.boss.name)
                     .textStyle(Constants.TextModifiers.Headline())
-                Text(store.boss.name)
-                    .textStyle(Constants.TextModifiers.Body())
+                
+                if let description = store.boss.description {
+                    Text(description)
+                        .textStyle(Constants.TextModifiers.Body())
+                }
                 
                 CustomSeparator()
                 

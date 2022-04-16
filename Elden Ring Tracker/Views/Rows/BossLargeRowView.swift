@@ -10,21 +10,29 @@ import SwiftUI
 struct BossLargeRowView: View {
     @State var boss: Boss
     
+    var closure: (() -> ())? = nil
+    
     var body: some View {
         VStack(alignment: .leading) {
             ZStack(alignment: .topTrailing) {
-                CustomImageView(url: "https://www.clickguarulhos.com.br/wp-content/uploads/2016/05/rato.jpg", desiredHeight: 255)
+                CustomImageView(url: boss.imageURL, desiredHeight: 255)
                 StatusCheckmarkView(checked: boss.checked)
                     .frame(width: 41, height: 41)
                     .padding(.top, Constants.Metrics.halfSpacing)
                     .padding(.trailing, Constants.Metrics.halfSpacing)
+                    .onTapGesture {
+                        closure?()
+                    }
             }
             VStack(alignment: .leading) {
                 Text(boss.name)
                     .textStyle(Constants.TextModifiers.CardTitle())
                     .padding(.bottom, Constants.Metrics.quarterSpacing)
-                Text(boss.name)
-                    .textStyle(Constants.TextModifiers.Caption())
+                
+                if let description = boss.description {
+                    Text(description)
+                        .textStyle(Constants.TextModifiers.Caption())
+                }
                 
                 HStack {
                     TagView(iconName: Constants.Icons.location, text: boss.locationName)

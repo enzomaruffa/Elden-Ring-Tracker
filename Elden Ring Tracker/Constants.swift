@@ -63,7 +63,7 @@ class Constants {
             func body(content: Content) -> some View {
                 content
                     .font(Fonts.headline)
-                    .lineSpacing(50.12)
+                    .lineSpacing(25)
                     .foregroundColor(Colors.fontNormal)
             }
         }
@@ -72,7 +72,7 @@ class Constants {
             func body(content: Content) -> some View {
                 content
                     .font(Fonts.body)
-                    .lineSpacing(28.64)
+                    .lineSpacing(14)
                     .foregroundColor(Colors.fontNormal)
             }
         }
@@ -81,7 +81,7 @@ class Constants {
             func body(content: Content) -> some View {
                 content
                     .font(Fonts.subtitle)
-                    .lineSpacing(16)
+                    .lineSpacing(8)
                     .foregroundColor(Colors.fontNormal)
             }
         }
@@ -90,7 +90,7 @@ class Constants {
             func body(content: Content) -> some View {
                 content
                     .font(Fonts.cardTitle)
-                    .lineSpacing(28)
+                    .lineSpacing(14)
                     .foregroundColor(Colors.fontNormal)
             }
         }
@@ -99,7 +99,7 @@ class Constants {
             func body(content: Content) -> some View {
                 content
                     .font(Fonts.caption)
-                    .lineSpacing(16)
+                    .lineSpacing(8)
                     .foregroundColor(Colors.fontCardBody)
             }
         }
@@ -108,7 +108,7 @@ class Constants {
             func body(content: Content) -> some View {
                 content
                     .font(Fonts.itemTitle)
-                    .lineSpacing(16)
+                    .lineSpacing(6)
                     .foregroundColor(Colors.fontNormal)
             }
         }
@@ -117,7 +117,7 @@ class Constants {
             func body(content: Content) -> some View {
                 content
                     .font(Fonts.superSmallCaption)
-                    .lineSpacing(12.5)
+                    .lineSpacing(6)
                     .foregroundColor(Colors.fontNormal)
             }
         }

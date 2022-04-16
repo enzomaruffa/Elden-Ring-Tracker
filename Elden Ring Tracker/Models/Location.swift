@@ -14,7 +14,14 @@ class Location {
     
     let bosses: [Boss]
     
+    let imageURL: String
+    let description: String
+    
     var collectableItems: [Item]
+    
+    var existingCollectableItems: [Item] {
+        collectableItems.filter({ $0.amountExisting > 0 })
+    }
     
     var bossesCompletedCount: Int {
         bosses.filter({ $0.checked }).count
@@ -37,6 +44,8 @@ class Location {
     
     init(staticLocation: StaticLocation, savedLocation: SavedLocation) {
         self.name = staticLocation.name
+        self.imageURL = staticLocation.imageURL
+        self.description = staticLocation.description
         
         self.bosses = staticLocation.bosses.map({
             Boss(staticBoss: $0,
@@ -45,7 +54,7 @@ class Location {
             )
         })
         
-        collectableItems = staticLocation.collectibes.map({ staticItem in
+        collectableItems = staticLocation.collectibles.map({ staticItem in
             let foundAmount = savedLocation.collectibes.first(where: { $0.type == staticItem.type })?.amount ?? 0
             
             return Item(type: staticItem.type,
@@ -59,5 +68,8 @@ class Location {
         
         bosses = []
         collectableItems = []
+        
+        imageURL = "https://www.clickguarulhos.com.br/wp-content/uploads/2016/05/rato.jpg"
+        description = "Big place"
     }
 }

@@ -10,14 +10,19 @@ import Foundation
 class StaticLocation: Codable {
     
     let name: String
+    var collectibles: [CollectibeItemSet] = []
+    
+    let imageURL: String
+    let description: String
     
     let bosses: [StaticBoss]
-    var collectibes: [CollectibeItemSet] = []
     
-    internal init(name: String, collectibes: [CollectibeItemSet], bosses: [StaticBoss]) {
+    internal init(name: String, collectibles: [CollectibeItemSet], imageURL: String, description: String, bosses: [StaticBoss]) {
         self.name = name
         self.bosses = bosses
-        self.collectibes = collectibes
+        self.collectibles = collectibles
+        self.imageURL = imageURL
+        self.description = description
     }
     
 }

@@ -12,10 +12,12 @@ struct ContentView: View {
     @State var progress: CGFloat = 0.5
     @State var spoiler: Bool = false
     
+    let locationsViewStore = LocationsViewStore()
+    
     var body: some View {
 //        ProgressRectangleView(progress: $progress, spoiler: $spoiler)
         TabView {
-            LocationsView(store: LocationsViewStore())
+            LocationsView(store: locationsViewStore)
                 .tabItem {
                     Label("Locations", systemImage: Constants.Icons.location)
                 }

@@ -9,13 +9,13 @@ import SwiftUI
 
 struct LocationView: View {
     
-    @StateObject var store: LocationViewStore
+    @ObservedObject var store: LocationViewStore
     
     @State var b = false
     
     var body: some View {
         ScrollView {
-            CustomImageView(url: "https://www.clickguarulhos.com.br/wp-content/uploads/2016/05/rato.jpg", desiredHeight: 255)
+            CustomImageView(url: store.location.imageURL, desiredHeight: 255)
             
             CustomSeparator()
             
@@ -27,7 +27,7 @@ struct LocationView: View {
                 Text(store.location.name)
                     .textStyle(Constants.TextModifiers.Headline())
                 
-                ForEach(store.location.collectableItems, id: \.uuid) { item in
+                ForEach(store.location.existingCollectableItems, id: \.uuid) { item in
                     
                     CollectableItemView(
                         increasedCount: {

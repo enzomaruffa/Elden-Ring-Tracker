@@ -18,7 +18,9 @@ struct BossesView: View {
                         NavigationLink {
                             BossView(store: BossViewStore(bossID: boss.id))
                         } label: {
-                            BossLargeRowView(boss: boss)
+                            BossLargeRowView(boss: boss) {
+                                bossesStore.toggleBoss(bossID: boss.id)
+                            }
                         }
                         .isDetailLink(false)
                         .buttonStyle(PlainButtonStyle())
@@ -27,8 +29,11 @@ struct BossesView: View {
                 }.padding()
             }
             .visibilityAwareObservables(observables: [bossesStore])
+            .navigationBarHidden(true)
+            .edgesIgnoringSafeArea([.top, .bottom])
         }
         .navigationViewStyle(.stack)
+        .navigationBarHidden(true)
     }
 }
 

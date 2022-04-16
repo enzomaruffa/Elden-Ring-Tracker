@@ -15,7 +15,7 @@ struct BossRowView: View {
         HStack {
             
             ZStack(alignment: .topTrailing) {
-                CustomImageView(url: "https://www.clickguarulhos.com.br/wp-content/uploads/2016/05/rato.jpg", desiredWidth: 110)
+                CustomImageView(url: boss.imageURL, desiredWidth: 110)
                     .frame(width: 110, alignment: .center)
                     .cornerRadius(Constants.Metrics.defaultCornerRadius)
                 StatusCheckmarkView(checked: boss.checked)
@@ -33,8 +33,11 @@ struct BossRowView: View {
                 Text(boss.name)
                     .textStyle(Constants.TextModifiers.CardTitle())
                     .padding(.bottom, Constants.Metrics.quarterSpacing/2)
-                Text(boss.name)
-                    .textStyle(Constants.TextModifiers.Caption())
+                
+                if let description = boss.description {
+                    Text(description)
+                        .textStyle(Constants.TextModifiers.Caption())
+                }
                 
                 HStack {
                     TagView(iconName: Constants.Icons.location, text: boss.locationName)

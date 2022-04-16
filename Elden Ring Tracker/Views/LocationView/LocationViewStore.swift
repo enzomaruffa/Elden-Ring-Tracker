@@ -18,6 +18,7 @@ class LocationViewStore: PausableObservableObject {
     
     init(locationName: String) {
         self.locationName = locationName
+        
         super.init()
         
         cancellabes = [
