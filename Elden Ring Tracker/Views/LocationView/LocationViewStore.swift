@@ -7,17 +7,18 @@
 
 import Foundation
 import Combine
-class LocationViewStore: ObservableObject {
+class LocationViewStore: PausableObservableObject {
     
     let locationRepository = LocationRepository.shared
     
     var cancellabes = [AnyCancellable]()
     let locationName: String
     
-    @Published var location: Location = Location()
+    var location: Location = Location()
     
     init(locationName: String) {
         self.locationName = locationName
+        super.init()
         
         cancellabes = [
             locationRepository
@@ -31,6 +32,7 @@ class LocationViewStore: ObservableObject {
                 }, receiveValue: { [weak self] location in
                     guard let location = location else { return }
                     self?.location = location
+                    self?.publishWillUpdate()
                 })
         ]
     }

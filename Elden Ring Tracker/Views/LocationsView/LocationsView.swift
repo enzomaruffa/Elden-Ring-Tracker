@@ -54,6 +54,7 @@ struct LocationsView: View {
                 }
                 .padding()
             }.background(Constants.Colors.pageBackground)
+            .visibilityAwareObservables(observables: [store])
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarTitleDisplayMode(.inline)

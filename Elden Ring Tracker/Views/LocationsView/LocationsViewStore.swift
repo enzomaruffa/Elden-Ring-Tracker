@@ -7,15 +7,16 @@
 
 import Foundation
 import Combine
-class LocationsViewStore: ObservableObject {
+class LocationsViewStore: PausableObservableObject {
     
     let locationRepository = LocationRepository.shared
     
     var cancellabes = [AnyCancellable]()
     
-    @Published var locations: [Location] = []
+    var locations: [Location] = []
     
-    init() {
+    override init() {
+        super.init()
         cancellabes = [
             locationRepository
                 .getLocationsPublisher()
@@ -24,6 +25,7 @@ class LocationsViewStore: ObservableObject {
                     print(error)
                 }, receiveValue: { [weak self] locations in
                     self?.locations = locations
+                    self?.publishWillUpdate()
                 })
         ]
     }

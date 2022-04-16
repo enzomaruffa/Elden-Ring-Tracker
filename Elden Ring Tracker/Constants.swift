@@ -12,15 +12,16 @@ class Constants {
     class Metrics {
         static let mainSpacing = CGFloat(32)
         static let halfSpacing = mainSpacing/2
+        static let quarterSpacing = halfSpacing/2
         static let smallCornerRadius = CGFloat(12)
         static let defaultCornerRadius = CGFloat(20)
     }
     
     class Icons {
         static let boss = "person.3.sequence.fill"
-        static let completion = "checkmark.circle.fill"
-        static let location = "location.circle.fill"
-        static let category = "location.circle.fill"
+        static let completion = "checkmark.fill"
+        static let location = "location.fill"
+        static let category = "location.fill"
     }
     
     class Colors {

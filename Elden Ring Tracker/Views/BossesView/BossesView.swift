@@ -8,7 +8,7 @@ import SwiftUI
 
 struct BossesView: View {
     
-    @ObservedObject var bossesStore = BossesViewStore()
+    @StateObject var bossesStore = BossesViewStore()
     
     var body: some View {
         NavigationView {
@@ -18,14 +18,15 @@ struct BossesView: View {
                         NavigationLink {
                             BossView(store: BossViewStore(bossID: boss.id))
                         } label: {
-                            BossRowView(boss: boss)
+                            BossLargeRowView(boss: boss)
                         }
                         .isDetailLink(false)
                         .buttonStyle(PlainButtonStyle())
-                        
+                        .padding(.bottom, Constants.Metrics.mainSpacing)
                     }
                 }.padding()
             }
+            .visibilityAwareObservables(observables: [bossesStore])
         }
         .navigationViewStyle(.stack)
     }

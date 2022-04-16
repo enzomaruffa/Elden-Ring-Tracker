@@ -33,8 +33,13 @@
 		C0B3EE1227E69FFE00994158 /* LocationViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B3EE1127E69FFE00994158 /* LocationViewStore.swift */; };
 		C0B3EE1427E6A00900994158 /* LocationsViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B3EE1327E6A00900994158 /* LocationsViewStore.swift */; };
 		C0B3EE1627E6A01800994158 /* BossesViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B3EE1527E6A01800994158 /* BossesViewStore.swift */; };
-		C0B3EE1E27E6AD1C00994158 /* BossView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B3EE1D27E6AD1C00994158 /* BossView.swift */; };
 		C0B3EE2027E6AD2600994158 /* BossViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B3EE1F27E6AD2600994158 /* BossViewStore.swift */; };
+		C0B8289827F0D142000D0314 /* BossView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8289727F0D142000D0314 /* BossView.swift */; };
+		C0B8289A27F0DE38000D0314 /* ObservableObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8289927F0DE38000D0314 /* ObservableObject+.swift */; };
+		C0B8289C27F0DEFE000D0314 /* VisibilityAwareObservables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8289B27F0DEFE000D0314 /* VisibilityAwareObservables.swift */; };
+		C0DA80E0280A6EF200B77F1C /* BossLargeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80DF280A6EF200B77F1C /* BossLargeRowView.swift */; };
+		C0DA80E7280A700A00B77F1C /* SmokedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80E6280A700A00B77F1C /* SmokedImageView.swift */; };
+		C0DA80E9280A720900B77F1C /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80E8280A720900B77F1C /* TagView.swift */; };
 		C0E6485927DD7171005B78C5 /* Elden_Ring_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E6485827DD7171005B78C5 /* Elden_Ring_TrackerApp.swift */; };
 		C0E6485B27DD7171005B78C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E6485A27DD7171005B78C5 /* ContentView.swift */; };
 		C0E6485D27DD7173005B78C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E6485C27DD7173005B78C5 /* Assets.xcassets */; };
@@ -68,8 +73,13 @@
 		C0B3EE1127E69FFE00994158 /* LocationViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewStore.swift; sourceTree = "<group>"; };
 		C0B3EE1327E6A00900994158 /* LocationsViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewStore.swift; sourceTree = "<group>"; };
 		C0B3EE1527E6A01800994158 /* BossesViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossesViewStore.swift; sourceTree = "<group>"; };
-		C0B3EE1D27E6AD1C00994158 /* BossView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossView.swift; sourceTree = "<group>"; };
 		C0B3EE1F27E6AD2600994158 /* BossViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossViewStore.swift; sourceTree = "<group>"; };
+		C0B8289727F0D142000D0314 /* BossView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossView.swift; sourceTree = "<group>"; };
+		C0B8289927F0DE38000D0314 /* ObservableObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableObject+.swift"; sourceTree = "<group>"; };
+		C0B8289B27F0DEFE000D0314 /* VisibilityAwareObservables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityAwareObservables.swift; sourceTree = "<group>"; };
+		C0DA80DF280A6EF200B77F1C /* BossLargeRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BossLargeRowView.swift; sourceTree = "<group>"; };
+		C0DA80E6280A700A00B77F1C /* SmokedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokedImageView.swift; sourceTree = "<group>"; };
+		C0DA80E8280A720900B77F1C /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		C0E6485527DD7171005B78C5 /* Elden Ring Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Elden Ring Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E6485827DD7171005B78C5 /* Elden_Ring_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elden_Ring_TrackerApp.swift; sourceTree = "<group>"; };
 		C0E6485A27DD7171005B78C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,8 +101,6 @@
 		C024860027E6B9D400E6F7EC /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				C024860127E6B9E600E6F7EC /* ProgressRectangle.swift */,
-				C024860327E6C38D00E6F7EC /* ProgressRectangleViewModel.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -128,6 +136,8 @@
 				C0B3EE0927E698F200994158 /* Color+.swift */,
 				C0B3EE0B27E69C5200994158 /* Text+.swift */,
 				C0B3EE0D27E69F6600994158 /* View+.swift */,
+				C0B8289927F0DE38000D0314 /* ObservableObject+.swift */,
+				C0B8289B27F0DEFE000D0314 /* VisibilityAwareObservables.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -144,6 +154,7 @@
 		C0B3EE1827E6A02800994158 /* Rows */ = {
 			isa = PBXGroup;
 			children = (
+				C0DA80DF280A6EF200B77F1C /* BossLargeRowView.swift */,
 				C0B3EE0027DDB58C00994158 /* LocationRowView.swift */,
 				C0B3EE0227DDB59800994158 /* BossRowView.swift */,
 			);
@@ -153,6 +164,7 @@
 		C0B3EE1927E6A02E00994158 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C0DA80E1280A6F1F00B77F1C /* Atoms */,
 				C024860027E6B9D400E6F7EC /* Helper */,
 				C0B3EE1C27E6AD0C00994158 /* BossView */,
 				C0B3EE1B27E6A04700994158 /* LocationView */,
@@ -185,10 +197,45 @@
 		C0B3EE1C27E6AD0C00994158 /* BossView */ = {
 			isa = PBXGroup;
 			children = (
-				C0B3EE1D27E6AD1C00994158 /* BossView.swift */,
 				C0B3EE1F27E6AD2600994158 /* BossViewStore.swift */,
+				C0B8289727F0D142000D0314 /* BossView.swift */,
 			);
 			path = BossView;
+			sourceTree = "<group>";
+		};
+		C0DA80E1280A6F1F00B77F1C /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				C0DA80E5280A6FF800B77F1C /* SmokedImageView */,
+				C0DA80E4280A6F4700B77F1C /* TagView */,
+				C0DA80E3280A6F2F00B77F1C /* ProgressRectangleView */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		C0DA80E3280A6F2F00B77F1C /* ProgressRectangleView */ = {
+			isa = PBXGroup;
+			children = (
+				C024860127E6B9E600E6F7EC /* ProgressRectangle.swift */,
+				C024860327E6C38D00E6F7EC /* ProgressRectangleViewModel.swift */,
+			);
+			path = ProgressRectangleView;
+			sourceTree = "<group>";
+		};
+		C0DA80E4280A6F4700B77F1C /* TagView */ = {
+			isa = PBXGroup;
+			children = (
+				C0DA80E8280A720900B77F1C /* TagView.swift */,
+			);
+			path = TagView;
+			sourceTree = "<group>";
+		};
+		C0DA80E5280A6FF800B77F1C /* SmokedImageView */ = {
+			isa = PBXGroup;
+			children = (
+				C0DA80E6280A700A00B77F1C /* SmokedImageView.swift */,
+			);
+			path = SmokedImageView;
 			sourceTree = "<group>";
 		};
 		C0E6484C27DD7171005B78C5 = {
@@ -312,23 +359,28 @@
 				C0B3EDF727DDAA9A00994158 /* Location.swift in Sources */,
 				C0B3EDEE27DD986000994158 /* StaticLocation.swift in Sources */,
 				C024860827E7B8DA00E6F7EC /* CollectibleItem.swift in Sources */,
+				C0DA80E9280A720900B77F1C /* TagView.swift in Sources */,
 				C0B3EDEA27DD983200994158 /* LocationRepository.swift in Sources */,
 				C024860427E6C38D00E6F7EC /* ProgressRectangleViewModel.swift in Sources */,
+				C0B8289827F0D142000D0314 /* BossView.swift in Sources */,
 				C0B3EE1427E6A00900994158 /* LocationsViewStore.swift in Sources */,
 				C0B3EE0E27E69F6600994158 /* View+.swift in Sources */,
 				C0B3EDF927DDAAA000994158 /* Boss.swift in Sources */,
 				C0B3EE0527DDBC3F00994158 /* Constants.swift in Sources */,
 				C0B3EDE427DD71B500994158 /* StaticBoss.swift in Sources */,
+				C0DA80E0280A6EF200B77F1C /* BossLargeRowView.swift in Sources */,
 				C0B3EE0127DDB58C00994158 /* LocationRowView.swift in Sources */,
 				C0B3EE1627E6A01800994158 /* BossesViewStore.swift in Sources */,
 				C0E6485B27DD7171005B78C5 /* ContentView.swift in Sources */,
+				C0B8289C27F0DEFE000D0314 /* VisibilityAwareObservables.swift in Sources */,
 				C0B3EDF527DDA8C400994158 /* SavedLocation.swift in Sources */,
-				C0B3EE1E27E6AD1C00994158 /* BossView.swift in Sources */,
 				C0B3EDFD27DDB57500994158 /* LocationsView.swift in Sources */,
 				C0B3EE1227E69FFE00994158 /* LocationViewStore.swift in Sources */,
 				C0B3EE0327DDB59800994158 /* BossRowView.swift in Sources */,
 				C0B3EE0727E697A400994158 /* SpoilerRepository.swift in Sources */,
 				C0B3EE2027E6AD2600994158 /* BossViewStore.swift in Sources */,
+				C0B8289A27F0DE38000D0314 /* ObservableObject+.swift in Sources */,
+				C0DA80E7280A700A00B77F1C /* SmokedImageView.swift in Sources */,
 				C0B3EDF327DDA84E00994158 /* SavedGameData.swift in Sources */,
 				C0E6485927DD7171005B78C5 /* Elden_Ring_TrackerApp.swift in Sources */,
 			);

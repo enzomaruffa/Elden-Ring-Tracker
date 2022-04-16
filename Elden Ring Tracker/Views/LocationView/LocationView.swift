@@ -15,27 +15,7 @@ struct LocationView: View {
     
     var body: some View {
         ScrollView {
-            AsyncImage(url: URL(string: "https://www.clickguarulhos.com.br/wp-content/uploads/2016/05/rato.jpg"),
-                       content: { image in
-                ZStack {
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(height: 255, alignment: .center)
-                        .clipped()
-                    Rectangle()
-                        .foregroundColor(.clear)
-                        .background(
-                            LinearGradient(colors: [
-                                Color.white.opacity(0),
-                                Color(hex: "121A1B")
-                            ], startPoint: .top, endPoint: .bottom)
-                        )
-                }
-            }, placeholder: {
-                Text("Loading...")
-            })
-                .frame(maxWidth: .infinity)
+            SmokedImageView(url: "https://www.clickguarulhos.com.br/wp-content/uploads/2016/05/rato.jpg", desiredHeight: 255)
             
             VStack(alignment: .leading,
                    spacing: Constants.Metrics.mainSpacing) {
@@ -44,7 +24,6 @@ struct LocationView: View {
                 }
                 Text(store.location.name)
                     .textStyle(Constants.TextModifiers.Headline())
-                
                 
                 ForEach(store.location.collectableItems, id: \.uuid) { item in
                     
@@ -77,5 +56,6 @@ struct LocationView: View {
         .background(Constants.Colors.pageBackground)
         .ignoresSafeArea()
         .padding(.bottom)
+        .visibilityAwareObservables(observables: [store])
     }
 }
