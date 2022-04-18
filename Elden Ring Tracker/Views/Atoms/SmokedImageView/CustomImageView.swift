@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
 
 struct CustomImageView: View {
     
@@ -15,13 +16,13 @@ struct CustomImageView: View {
     @State var smoked: Bool = false
     
     var body: some View {
-        AsyncImage(url: URL(string: url),
+        CachedAsyncImage(url: URL(string: url),
                    content: { image in
             ZStack {
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: desiredWidth, height: desiredHeight, alignment: .center)
+//                    .frame(width: desiredWidth, height: desiredHeight, alignment: .center)
                     .clipped()
                 
                 if smoked {

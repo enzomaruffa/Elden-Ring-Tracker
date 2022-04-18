@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BossRowView: View {
-    @State var boss: Boss
+    var boss: Boss
     var closure: (() -> ())? = nil
     
     var body: some View {
@@ -39,10 +39,16 @@ struct BossRowView: View {
                         .textStyle(Constants.TextModifiers.Caption())
                 }
                 
-                HStack {
-                    TagView(iconName: Constants.Icons.location, text: boss.locationName)
-                    TagView(iconName: Constants.Icons.category, text: boss.category)
-                }
+                FlexibleView(
+                    data: boss.tags,
+                    spacing: 15,
+                    overallAlignment: .topLeading,
+                    alignment: .leading
+                  ) { item in
+                      TagView(iconName: item.iconName, text: item.text)
+                  }
+//                  .padding(.horizontal, model.padding)
+                
                 .padding(.top, Constants.Metrics.quarterSpacing)
                 
             }.padding()

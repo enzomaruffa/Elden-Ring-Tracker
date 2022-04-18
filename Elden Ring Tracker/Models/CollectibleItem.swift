@@ -34,6 +34,7 @@ enum CollectableItemType: String, Codable {
     case sacredTears
     case crystalTears
     case dragonHearts
+    case bosses
     
     var name: String {
         switch self {
@@ -45,6 +46,8 @@ enum CollectableItemType: String, Codable {
             return "Crystal Tears"
         case .dragonHearts:
             return "Dragon Hearts"
+        case .bosses:
+            return "Bosses"
         }
     }
     var iconName: String {
@@ -57,6 +60,8 @@ enum CollectableItemType: String, Codable {
             return "sparkle"
         case .dragonHearts:
             return "heart.fill"
+        case .bosses:
+            return "crown.fill"
         }
     }
     var colorHex: String {
@@ -69,6 +74,8 @@ enum CollectableItemType: String, Codable {
             return "FFFFFF"
         case .dragonHearts:
             return "FF0000"
+        case .bosses:
+            return "000000"
         }
     }
 }

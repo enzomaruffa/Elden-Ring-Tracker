@@ -7,12 +7,16 @@
 
 import Foundation
 
-class Location {
+class Location: Identifiable {
+    var uuid: Int {
+        var hasher = Hasher()
+        hasher.combine(self)
+        return hasher.finalize()
+    }
     
-    let uuid = UUID()
     let name: String
     
-    let bosses: [Boss]
+    var bosses: [Boss]
     
     let imageURL: String
     let description: String
@@ -53,14 +57,19 @@ class Location {
                  checked: savedLocation.checkedBosses.contains($0.id)
             )
         })
-        
-        collectableItems = staticLocation.collectibles.map({ staticItem in
+                collectableItems = staticLocation.collectibles.map({ staticItem in
             let foundAmount = savedLocation.collectibes.first(where: { $0.type == staticItem.type })?.amount ?? 0
             
             return Item(type: staticItem.type,
                         amountFound: foundAmount,
                         amountExisting: staticItem.amount)
         })
+        
+        collectableItems.append(Item(
+            type: .bosses,
+            amountFound: bossesCompletedCount,
+            amountExisting: bosses.count)
+        )
     }
     
     init() {
@@ -72,4 +81,24 @@ class Location {
         imageURL = "https://www.clickguarulhos.com.br/wp-content/uploads/2016/05/rato.jpg"
         description = "Big place"
     }
+}
+
+extension Location: Equatable {
+    
+    static func == (lhs: Location, rhs: Location) -> Bool {
+        lhs.name == rhs.name
+        && lhs.totalItemsCompleted == rhs.totalItemsCompleted
+    }
+    
+}
+
+extension Location: Hashable {
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(bosses)
+        hasher.combine(imageURL)
+        hasher.combine(description)
+    }
+    
 }

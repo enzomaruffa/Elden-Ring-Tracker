@@ -35,9 +35,9 @@ struct LocationsView: View {
                         Text("Locations")
                             .textStyle(Constants.TextModifiers.Subtitle())
                         
-                        ForEach($store.locations, id: \.uuid) { location in
+                        ForEach(store.locations, id: \.uuid) { location in
                             NavigationLink {
-                                LocationView(store: LocationViewStore(locationName: location.wrappedValue.name))
+                                LocationView(store: LocationViewStore(locationName: location.name))
                                     .background(Constants.Colors.pageBackground)
                             } label: {
                                 LocationRowView(location: location)

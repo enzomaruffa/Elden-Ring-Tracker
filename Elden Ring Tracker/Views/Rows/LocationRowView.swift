@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct LocationRowView: View {
+    @State var location: Location
     
-    @Binding var location: Location
     var body: some View {
         VStack(alignment: .leading) {
             

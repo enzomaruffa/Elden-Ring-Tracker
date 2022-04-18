@@ -7,9 +7,14 @@
 
 import Foundation
 
-class Boss {
+class Boss: Identifiable {
     
-    let uuid = UUID()
+    var uuid: Int {
+        var hasher = Hasher()
+        hasher.combine(self)
+        return hasher.finalize()
+    }
+    
     var id: Int
     let name: String
     let locationName: String
@@ -23,6 +28,13 @@ class Boss {
     let locationURL: String?
     
     let checked: Bool
+    
+    var tags: [Tag] {
+        [
+            Tag(iconName: Constants.Icons.location, text: locationName),
+            Tag(iconName: Constants.Icons.category, text: category)
+        ]
+    }
     
     init(staticBoss: StaticBoss, locationName: String, checked: Bool) {
         id = staticBoss.id
@@ -67,6 +79,27 @@ class Boss {
         detailedLocation = nil
         locationURL = nil
         checked = false
+    }
+    
+}
+
+extension Boss: Equatable {
+    
+    static func == (lhs: Boss, rhs: Boss) -> Bool {
+        lhs.name == rhs.name
+        && lhs.checked == rhs.checked
+    }
+    
+}
+
+extension Boss: Hashable {
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(checked)
+        hasher.combine(description)
+        hasher.combine(locationName)
+        hasher.combine(id)
     }
     
 }

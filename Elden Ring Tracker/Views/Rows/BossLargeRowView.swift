@@ -34,10 +34,16 @@ struct BossLargeRowView: View {
                         .textStyle(Constants.TextModifiers.Caption())
                 }
                 
-                HStack {
-                    TagView(iconName: Constants.Icons.location, text: boss.locationName)
-                    TagView(iconName: Constants.Icons.category, text: boss.category)
-                }
+                
+                
+                FlexibleView(
+                    data: boss.tags,
+                    spacing: 15,
+                    overallAlignment: .topLeading,
+                    alignment: .leading
+                  ) { item in
+                      TagView(iconName: item.iconName, text: item.text)
+                  }
                 .padding(.top, Constants.Metrics.halfSpacing)
                 
             }.padding()

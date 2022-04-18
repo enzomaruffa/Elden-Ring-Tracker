@@ -43,6 +43,9 @@
 		C0DA80EC280A763B00B77F1C /* StatusCheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80EB280A763B00B77F1C /* StatusCheckmarkView.swift */; };
 		C0DA80EE280A8CAE00B77F1C /* CustomSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80ED280A8CAE00B77F1C /* CustomSeparator.swift */; };
 		C0DA80F0280A940B00B77F1C /* PercentageCheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80EF280A940B00B77F1C /* PercentageCheckmarkView.swift */; };
+		C0DA80F3280D087D00B77F1C /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = C0DA80F2280D087D00B77F1C /* CachedAsyncImage */; };
+		C0DA80F5280D098B00B77F1C /* FlexibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80F4280D098B00B77F1C /* FlexibleView.swift */; };
+		C0DA80F8280D0A5C00B77F1C /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80F7280D0A5C00B77F1C /* Tag.swift */; };
 		C0E6485927DD7171005B78C5 /* Elden_Ring_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E6485827DD7171005B78C5 /* Elden_Ring_TrackerApp.swift */; };
 		C0E6485B27DD7171005B78C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E6485A27DD7171005B78C5 /* ContentView.swift */; };
 		C0E6485D27DD7173005B78C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0E6485C27DD7173005B78C5 /* Assets.xcassets */; };
@@ -86,6 +89,8 @@
 		C0DA80EB280A763B00B77F1C /* StatusCheckmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCheckmarkView.swift; sourceTree = "<group>"; };
 		C0DA80ED280A8CAE00B77F1C /* CustomSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSeparator.swift; sourceTree = "<group>"; };
 		C0DA80EF280A940B00B77F1C /* PercentageCheckmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageCheckmarkView.swift; sourceTree = "<group>"; };
+		C0DA80F4280D098B00B77F1C /* FlexibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleView.swift; sourceTree = "<group>"; };
+		C0DA80F7280D0A5C00B77F1C /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		C0E6485527DD7171005B78C5 /* Elden Ring Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Elden Ring Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E6485827DD7171005B78C5 /* Elden_Ring_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elden_Ring_TrackerApp.swift; sourceTree = "<group>"; };
 		C0E6485A27DD7171005B78C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0DA80F3280D087D00B77F1C /* CachedAsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +138,7 @@
 				C0B3EDF627DDAA9A00994158 /* Location.swift */,
 				C0B3EDF827DDAAA000994158 /* Boss.swift */,
 				C024860727E7B8DA00E6F7EC /* CollectibleItem.swift */,
+				C0DA80F7280D0A5C00B77F1C /* Tag.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -218,6 +225,7 @@
 				C0DA80E4280A6F4700B77F1C /* TagView */,
 				C0DA80E3280A6F2F00B77F1C /* ProgressRectangleView */,
 				C0DA80EF280A940B00B77F1C /* PercentageCheckmarkView.swift */,
+				C0DA80F4280D098B00B77F1C /* FlexibleView.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -311,6 +319,9 @@
 			dependencies = (
 			);
 			name = "Elden Ring Tracker";
+			packageProductDependencies = (
+				C0DA80F2280D087D00B77F1C /* CachedAsyncImage */,
+			);
 			productName = "Elden Ring Tracker";
 			productReference = C0E6485527DD7171005B78C5 /* Elden Ring Tracker.app */;
 			productType = "com.apple.product-type.application";
@@ -339,6 +350,9 @@
 				Base,
 			);
 			mainGroup = C0E6484C27DD7171005B78C5;
+			packageReferences = (
+				C0DA80F1280D087D00B77F1C /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+			);
 			productRefGroup = C0E6485627DD7171005B78C5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -381,6 +395,7 @@
 				C0DA80E9280A720900B77F1C /* TagView.swift in Sources */,
 				C0B3EDEA27DD983200994158 /* LocationRepository.swift in Sources */,
 				C024860427E6C38D00E6F7EC /* ProgressRectangleViewModel.swift in Sources */,
+				C0DA80F5280D098B00B77F1C /* FlexibleView.swift in Sources */,
 				C0B8289827F0D142000D0314 /* BossView.swift in Sources */,
 				C0B3EE1427E6A00900994158 /* LocationsViewStore.swift in Sources */,
 				C0B3EE0E27E69F6600994158 /* View+.swift in Sources */,
@@ -396,6 +411,7 @@
 				C0B3EDF527DDA8C400994158 /* SavedLocation.swift in Sources */,
 				C0B3EDFD27DDB57500994158 /* LocationsView.swift in Sources */,
 				C0B3EE1227E69FFE00994158 /* LocationViewStore.swift in Sources */,
+				C0DA80F8280D0A5C00B77F1C /* Tag.swift in Sources */,
 				C0B3EE0327DDB59800994158 /* BossRowView.swift in Sources */,
 				C0B3EE0727E697A400994158 /* SpoilerRepository.swift in Sources */,
 				C0B3EE2027E6AD2600994158 /* BossViewStore.swift in Sources */,
@@ -605,6 +621,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C0DA80F1280D087D00B77F1C /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-cached-async-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C0DA80F2280D087D00B77F1C /* CachedAsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0DA80F1280D087D00B77F1C /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
+			productName = CachedAsyncImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C0E6484D27DD7171005B78C5 /* Project object */;
 }
