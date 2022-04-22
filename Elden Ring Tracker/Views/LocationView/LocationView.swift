@@ -66,3 +66,5 @@ struct LocationView: View {
         .visibilityAwareObservables(observables: [store])
     }
 }
+
+

@@ -37,6 +37,7 @@
 		C0B8289827F0D142000D0314 /* BossView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8289727F0D142000D0314 /* BossView.swift */; };
 		C0B8289A27F0DE38000D0314 /* ObservableObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8289927F0DE38000D0314 /* ObservableObject+.swift */; };
 		C0B8289C27F0DEFE000D0314 /* VisibilityAwareObservables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8289B27F0DEFE000D0314 /* VisibilityAwareObservables.swift */; };
+		C0C4AC8C281257AE002614C6 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0C4AC8B281257AE002614C6 /* GameKit.framework */; };
 		C0DA80E0280A6EF200B77F1C /* BossLargeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80DF280A6EF200B77F1C /* BossLargeRowView.swift */; };
 		C0DA80E7280A700A00B77F1C /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80E6280A700A00B77F1C /* CustomImageView.swift */; };
 		C0DA80E9280A720900B77F1C /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80E8280A720900B77F1C /* TagView.swift */; };
@@ -83,6 +84,7 @@
 		C0B8289727F0D142000D0314 /* BossView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossView.swift; sourceTree = "<group>"; };
 		C0B8289927F0DE38000D0314 /* ObservableObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableObject+.swift"; sourceTree = "<group>"; };
 		C0B8289B27F0DEFE000D0314 /* VisibilityAwareObservables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityAwareObservables.swift; sourceTree = "<group>"; };
+		C0C4AC8B281257AE002614C6 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		C0DA80DF280A6EF200B77F1C /* BossLargeRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BossLargeRowView.swift; sourceTree = "<group>"; };
 		C0DA80E6280A700A00B77F1C /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		C0DA80E8280A720900B77F1C /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0DA80F3280D087D00B77F1C /* CachedAsyncImage in Frameworks */,
+				C0C4AC8C281257AE002614C6 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +218,14 @@
 			path = BossView;
 			sourceTree = "<group>";
 		};
+		C0C4AC8A281257AE002614C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0C4AC8B281257AE002614C6 /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C0DA80E1280A6F1F00B77F1C /* Atoms */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +279,7 @@
 			children = (
 				C0E6485727DD7171005B78C5 /* Elden Ring Tracker */,
 				C0E6485627DD7171005B78C5 /* Products */,
+				C0C4AC8A281257AE002614C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -547,7 +559,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Elden Ring Tracker/Preview Content\"";
 				DEVELOPMENT_TEAM = D9FBK2WPJX;
 				ENABLE_PREVIEWS = YES;
@@ -555,6 +567,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = gamekit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -576,7 +589,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Elden Ring Tracker/Preview Content\"";
 				DEVELOPMENT_TEAM = D9FBK2WPJX;
 				ENABLE_PREVIEWS = YES;
@@ -584,6 +597,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = gamekit;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
