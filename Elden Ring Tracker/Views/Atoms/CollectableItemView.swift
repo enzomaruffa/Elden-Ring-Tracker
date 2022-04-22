@@ -46,41 +46,47 @@ struct CollectableItemView: View {
                 Spacer()
                 
                 HStack {
-                    
-                    Button {
-                        decreasedCount()
-                    } label: {
-                        Constants.Colors.greenGradient
-                            .mask {
-                                Image(systemName: Constants.Icons.minus)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                            }
-                        .frame(width: 24, height: 24, alignment: .center)
+                    if item.displayIncrement {
+                        
+                        Button {
+                            decreasedCount()
+                        } label: {
+                            Constants.Colors.greenGradient
+                                .mask {
+                                    Image(systemName: Constants.Icons.minus)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                }
+                                .frame(width: 24, height: 24, alignment: .center)
+                        }
                     }
-                    
+                        
                     Text("\(item.amountFound.description)/\(item.amountExisting.description)")
                         .textStyle(Constants.TextModifiers.ItemTitle())
-                    
-                    
-                    Button {
-                        increasedCount()
-                    } label: {
-                        Constants.Colors.greenGradient
-                            .mask {
-                                Image(systemName: Constants.Icons.plus)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                            }
-                        .frame(width: 24, height: 24, alignment: .center)
+                        
+                        
+                    if item.displayIncrement {
+                        Button {
+                            increasedCount()
+                        } label: {
+                            Constants.Colors.greenGradient
+                                .mask {
+                                    Image(systemName: Constants.Icons.plus)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                }
+                                .frame(width: 24, height: 24, alignment: .center)
+                        }
+                        
                     }
-                    
-                    
                 }
                 .padding(.trailing, Constants.Metrics.halfSpacing)
             }
         }.onTapGesture {
-            increasedCount()
+            
+            if item.displayIncrement {
+                increasedCount()
+            }
         }
     }
 }

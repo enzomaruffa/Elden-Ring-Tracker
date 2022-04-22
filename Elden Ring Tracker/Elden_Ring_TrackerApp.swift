@@ -15,3 +15,4 @@ struct Elden_Ring_TrackerApp: App {
         }
     }
 }
+

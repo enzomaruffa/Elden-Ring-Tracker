@@ -43,17 +43,20 @@ struct LocationView: View {
                 
                 Text("Bosses")
                     .textStyle(Constants.TextModifiers.Subtitle())
-                ForEach(store.location.bosses, id: \.uuid) { boss in
-                    NavigationLink {
-                        BossView(store: BossViewStore(bossID: boss.id))
-                    } label: {
-                        BossRowView(boss: boss) {
-                            store.toggleBoss(bossID: boss.id)
+                LazyVStack {
+                    ForEach(store.location.bosses, id: \.uuid) { boss in
+                        NavigationLink {
+                            BossView(store: BossViewStore(bossID: boss.id))
+                        } label: {
+                            BossRowView(boss: boss) {
+                                store.toggleBoss(bossID: boss.id)
+                            }
                         }
+                        .isDetailLink(false)
+                        .buttonStyle(PlainButtonStyle())
                     }
-                    .isDetailLink(false)
-                    .buttonStyle(PlainButtonStyle())
                 }
+                
             }
                    .padding(Constants.Metrics.mainSpacing)
         }

@@ -62,13 +62,15 @@ class Location: Identifiable {
             
             return Item(type: staticItem.type,
                         amountFound: foundAmount,
-                        amountExisting: staticItem.amount)
+                        amountExisting: staticItem.amount,
+                        displayIncrement: true)
         })
         
         collectableItems.append(Item(
             type: .bosses,
             amountFound: bossesCompletedCount,
-            amountExisting: bosses.count)
+            amountExisting: bosses.count,
+            displayIncrement: false)
         )
     }
     

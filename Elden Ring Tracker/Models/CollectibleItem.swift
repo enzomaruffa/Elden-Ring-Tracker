@@ -17,15 +17,18 @@ class Item {
     let amountFound: Int
     let amountExisting: Int
     
+    let displayIncrement: Bool
+    
     var progress: CGFloat {
         if amountExisting == 0 { return 0 }
         return CGFloat(amountFound) / CGFloat(amountExisting)
     }
     
-    internal init(type: CollectableItemType, amountFound: Int, amountExisting: Int) {
+    internal init(type: CollectableItemType, amountFound: Int, amountExisting: Int, displayIncrement: Bool) {
         self.type = type
         self.amountFound = amountFound
         self.amountExisting = amountExisting
+        self.displayIncrement = displayIncrement
     }
 }
 

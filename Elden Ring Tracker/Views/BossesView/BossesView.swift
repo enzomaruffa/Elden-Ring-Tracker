@@ -13,7 +13,7 @@ struct BossesView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack {
+                LazyVStack {
                     ForEach(bossesStore.bosses, id: \.uuid) { boss in
                         NavigationLink {
                             BossView(store: BossViewStore(bossID: boss.id))
