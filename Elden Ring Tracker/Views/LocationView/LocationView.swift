@@ -61,8 +61,6 @@ struct LocationView: View {
                    .padding(Constants.Metrics.mainSpacing)
         }
         .background(Constants.Colors.pageBackground)
-        .ignoresSafeArea()
-        .padding(.bottom)
         .visibilityAwareObservables(observables: [store])
     }
 }

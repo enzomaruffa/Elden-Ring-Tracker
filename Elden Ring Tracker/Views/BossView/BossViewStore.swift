@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 class BossViewStore: PausableObservableObject {
     
     let locationRepository = LocationRepository.shared
@@ -48,5 +49,19 @@ class BossViewStore: PausableObservableObject {
     
     func toggleBoss() {
         locationRepository.toggle(bossID: bossID)
+    }
+    
+    func openWiki() {
+        if let url = boss.wikiURL,
+           let link = URL(string: url) {
+          UIApplication.shared.open(link)
+        }
+    }
+    
+    func openMap() {
+        if let url = boss.locationURL,
+           let link = URL(string: url) {
+          UIApplication.shared.open(link)
+        }
     }
 }

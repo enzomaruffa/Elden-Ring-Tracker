@@ -9,12 +9,13 @@ import SwiftUI
 struct BossesView: View {
     
     @StateObject var bossesStore = BossesViewStore()
+    @State var searchQuery: String = ""
     
     var body: some View {
         NavigationView {
             ScrollView {
                 LazyVStack {
-                    ForEach(bossesStore.bosses, id: \.uuid) { boss in
+                    ForEach(bossesStore.filteredBosses, id: \.uuid) { boss in
                         NavigationLink {
                             BossView(store: BossViewStore(bossID: boss.id))
                         } label: {
@@ -27,13 +28,23 @@ struct BossesView: View {
                         .padding(.bottom, Constants.Metrics.mainSpacing)
                     }
                 }.padding()
+                .background(Constants.Colors.pageBackground)
             }
             .visibilityAwareObservables(observables: [bossesStore])
-            .navigationBarHidden(true)
-            .edgesIgnoringSafeArea([.top, .bottom])
+            .navigationBarTitleDisplayMode(.inline)
+            .background(Constants.Colors.pageBackground)
         }
+        .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always))
+        .onChange(of: searchQuery) { _ in
+            bossesStore.searchQuery = searchQuery.lowercased()
+            bossesStore.refreshFilter()
+        }
+        .onSubmit(of: .search, {
+            bossesStore.searchQuery = searchQuery.lowercased()
+            bossesStore.refreshFilter()
+        })
         .navigationViewStyle(.stack)
-        .navigationBarHidden(true)
+        .background(Constants.Colors.pageBackground)
     }
 }
 

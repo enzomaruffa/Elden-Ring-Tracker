@@ -7,13 +7,14 @@
 
 import Foundation
 import SwiftUI
+import SpriteKit
 
 struct BossView: View {
     @ObservedObject var store: BossViewStore
     
     var body: some View {
         ScrollView {
-            CustomImageView(url: store.boss.imageURL, desiredHeight: 255)
+            CustomImageView(url: store.boss.imageURL, desiredHeight: 300)
             
             VStack(alignment: .leading,
                    spacing: Constants.Metrics.mainSpacing) {
@@ -25,7 +26,8 @@ struct BossView: View {
                 
                 if let description = store.boss.description {
                     Text(description)
-                        .textStyle(Constants.TextModifiers.Body())
+                        .italic()
+                        .textStyle(Constants.TextModifiers.Caption())
                 }
                 
                 CustomSeparator()
@@ -33,6 +35,45 @@ struct BossView: View {
                 if let detailedLocation = store.boss.detailedLocation {
                     Text(detailedLocation)
                         .textStyle(Constants.TextModifiers.Body())
+                }
+                
+                HStack {
+                    Button(action: {
+                        store.openWiki()
+                    }) {
+                        VStack(alignment: .center) {
+                            Image(systemName: Constants.Icons.wiki)
+                                .foregroundColor(Constants.Colors.fontNormal)
+                            Spacer()
+                            Text("Open Wiki")
+                                .bold()
+                                .textStyle(Constants.TextModifiers.ItemTitle())
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(
+                            Constants.Colors.bossNotDone
+                        )
+                        .cornerRadius(Constants.Metrics.defaultCornerRadius)
+                    }
+                    Button(action: {
+                        store.openMap()
+                    }) {
+                        VStack(alignment: .center) {
+                            Image(systemName: Constants.Icons.map)
+                                .foregroundColor(Constants.Colors.fontNormal)
+                            Spacer()
+                            Text("Open Map")
+                                .bold()
+                                .textStyle(Constants.TextModifiers.ItemTitle())
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(
+                            Constants.Colors.bossNotDone
+                        )
+                        .cornerRadius(Constants.Metrics.defaultCornerRadius)
+                    }
                 }
                 
                 Button(action: {
@@ -52,8 +93,6 @@ struct BossView: View {
            .padding(Constants.Metrics.mainSpacing)
         }
         .background(Constants.Colors.pageBackground)
-        .ignoresSafeArea()
-        .padding(.bottom)
         .visibilityAwareObservables(observables: [store])
     }
 }

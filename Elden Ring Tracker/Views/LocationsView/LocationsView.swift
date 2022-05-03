@@ -51,10 +51,10 @@ struct LocationsView: View {
             }.background(Constants.Colors.pageBackground)
             .visibilityAwareObservables(observables: [store])
             .navigationBarHidden(true)
-            .edgesIgnoringSafeArea([.top, .bottom])
+            .navigationBarTitleDisplayMode(.inline)
+//            .padding(.vertical, 20)
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .navigationBarTitleDisplayMode(.inline)
         .background(Constants.Colors.pageBackground)
     }
 }

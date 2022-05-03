@@ -25,6 +25,9 @@ class Constants {
         
         static let plus = "plus.square"
         static let minus = "minus.square"
+        
+        static let wiki = "globe"
+        static let map = "map"
     }
     
     class Colors {
@@ -48,7 +51,7 @@ class Constants {
     class Fonts {
         static let headline = Font.custom("SF Pro Display", size: 42).weight(.bold)
         static let subtitle = Font.custom("SF Pro Display", size: 36).weight(.semibold)
-        static let body = Font.custom("SF Pro Display", size: 24).weight(.regular)
+        static let body = Font.custom("SF Pro Display", size: 16).weight(.regular)
         
         static let cardTitle = Font.custom("SF Pro Display", size: 22).weight(.bold)
         static let caption = Font.custom("SF Pro Display", size: 12).weight(.medium)
@@ -63,7 +66,7 @@ class Constants {
             func body(content: Content) -> some View {
                 content
                     .font(Fonts.headline)
-                    .lineSpacing(25)
+                    .lineSpacing(10)
                     .foregroundColor(Colors.fontNormal)
             }
         }
@@ -72,7 +75,7 @@ class Constants {
             func body(content: Content) -> some View {
                 content
                     .font(Fonts.body)
-                    .lineSpacing(14)
+                    .lineSpacing(9)
                     .foregroundColor(Colors.fontNormal)
             }
         }
@@ -81,7 +84,7 @@ class Constants {
             func body(content: Content) -> some View {
                 content
                     .font(Fonts.subtitle)
-                    .lineSpacing(8)
+                    .lineSpacing(6)
                     .foregroundColor(Colors.fontNormal)
             }
         }
@@ -90,7 +93,7 @@ class Constants {
             func body(content: Content) -> some View {
                 content
                     .font(Fonts.cardTitle)
-                    .lineSpacing(14)
+                    .lineSpacing(6)
                     .foregroundColor(Colors.fontNormal)
             }
         }
@@ -99,7 +102,7 @@ class Constants {
             func body(content: Content) -> some View {
                 content
                     .font(Fonts.caption)
-                    .lineSpacing(8)
+                    .lineSpacing(3)
                     .foregroundColor(Colors.fontCardBody)
             }
         }
@@ -108,7 +111,7 @@ class Constants {
             func body(content: Content) -> some View {
                 content
                     .font(Fonts.itemTitle)
-                    .lineSpacing(6)
+                    .lineSpacing(3)
                     .foregroundColor(Colors.fontNormal)
             }
         }
@@ -117,7 +120,7 @@ class Constants {
             func body(content: Content) -> some View {
                 content
                     .font(Fonts.superSmallCaption)
-                    .lineSpacing(6)
+                    .lineSpacing(2)
                     .foregroundColor(Colors.fontNormal)
             }
         }

@@ -38,13 +38,13 @@
 		C0B8289A27F0DE38000D0314 /* ObservableObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8289927F0DE38000D0314 /* ObservableObject+.swift */; };
 		C0B8289C27F0DEFE000D0314 /* VisibilityAwareObservables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B8289B27F0DEFE000D0314 /* VisibilityAwareObservables.swift */; };
 		C0C4AC8C281257AE002614C6 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0C4AC8B281257AE002614C6 /* GameKit.framework */; };
+		C0C4ACBA2815D97F002614C6 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4ACB92815D97F002614C6 /* CachedAsyncImage.swift */; };
 		C0DA80E0280A6EF200B77F1C /* BossLargeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80DF280A6EF200B77F1C /* BossLargeRowView.swift */; };
 		C0DA80E7280A700A00B77F1C /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80E6280A700A00B77F1C /* CustomImageView.swift */; };
 		C0DA80E9280A720900B77F1C /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80E8280A720900B77F1C /* TagView.swift */; };
 		C0DA80EC280A763B00B77F1C /* StatusCheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80EB280A763B00B77F1C /* StatusCheckmarkView.swift */; };
 		C0DA80EE280A8CAE00B77F1C /* CustomSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80ED280A8CAE00B77F1C /* CustomSeparator.swift */; };
 		C0DA80F0280A940B00B77F1C /* PercentageCheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80EF280A940B00B77F1C /* PercentageCheckmarkView.swift */; };
-		C0DA80F3280D087D00B77F1C /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = C0DA80F2280D087D00B77F1C /* CachedAsyncImage */; };
 		C0DA80F5280D098B00B77F1C /* FlexibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80F4280D098B00B77F1C /* FlexibleView.swift */; };
 		C0DA80F8280D0A5C00B77F1C /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DA80F7280D0A5C00B77F1C /* Tag.swift */; };
 		C0E6485927DD7171005B78C5 /* Elden_Ring_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E6485827DD7171005B78C5 /* Elden_Ring_TrackerApp.swift */; };
@@ -85,6 +85,8 @@
 		C0B8289927F0DE38000D0314 /* ObservableObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableObject+.swift"; sourceTree = "<group>"; };
 		C0B8289B27F0DEFE000D0314 /* VisibilityAwareObservables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityAwareObservables.swift; sourceTree = "<group>"; };
 		C0C4AC8B281257AE002614C6 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		C0C4ACAD28145BDF002614C6 /* Elden-Ring-Tracker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Elden-Ring-Tracker-Info.plist"; sourceTree = SOURCE_ROOT; };
+		C0C4ACB92815D97F002614C6 /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
 		C0DA80DF280A6EF200B77F1C /* BossLargeRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BossLargeRowView.swift; sourceTree = "<group>"; };
 		C0DA80E6280A700A00B77F1C /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		C0DA80E8280A720900B77F1C /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
@@ -105,7 +107,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0DA80F3280D087D00B77F1C /* CachedAsyncImage in Frameworks */,
 				C0C4AC8C281257AE002614C6 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +295,7 @@
 		C0E6485727DD7171005B78C5 /* Elden Ring Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				C0C4ACAD28145BDF002614C6 /* Elden-Ring-Tracker-Info.plist */,
 				C0B3EE0827E698E800994158 /* Extensions */,
 				C0E6485827DD7171005B78C5 /* Elden_Ring_TrackerApp.swift */,
 				C0E6485A27DD7171005B78C5 /* ContentView.swift */,
@@ -303,6 +305,7 @@
 				C0B3EE1927E6A02E00994158 /* Views */,
 				C0B3EDEC27DD984700994158 /* Repositories */,
 				C0B3EE0427DDBC3F00994158 /* Constants.swift */,
+				C0C4ACB92815D97F002614C6 /* CachedAsyncImage.swift */,
 			);
 			path = "Elden Ring Tracker";
 			sourceTree = "<group>";
@@ -332,7 +335,6 @@
 			);
 			name = "Elden Ring Tracker";
 			packageProductDependencies = (
-				C0DA80F2280D087D00B77F1C /* CachedAsyncImage */,
 			);
 			productName = "Elden Ring Tracker";
 			productReference = C0E6485527DD7171005B78C5 /* Elden Ring Tracker.app */;
@@ -401,6 +403,7 @@
 				C024860227E6B9E600E6F7EC /* ProgressRectangle.swift in Sources */,
 				C0B3EE1027E69FC300994158 /* LocationView.swift in Sources */,
 				C0B3EDE827DD97BB00994158 /* StaticGameData.swift in Sources */,
+				C0C4ACBA2815D97F002614C6 /* CachedAsyncImage.swift in Sources */,
 				C0B3EDF727DDAA9A00994158 /* Location.swift in Sources */,
 				C0B3EDEE27DD986000994158 /* StaticLocation.swift in Sources */,
 				C024860827E7B8DA00E6F7EC /* CollectibleItem.swift in Sources */,
@@ -559,12 +562,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Elden Ring Tracker/Preview Content\"";
 				DEVELOPMENT_TEAM = D9FBK2WPJX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "Elden-Ring-Tracker-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = gamekit;
@@ -589,12 +592,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Elden Ring Tracker/Preview Content\"";
 				DEVELOPMENT_TEAM = D9FBK2WPJX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "Elden-Ring-Tracker-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = gamekit;
@@ -646,14 +649,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		C0DA80F2280D087D00B77F1C /* CachedAsyncImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C0DA80F1280D087D00B77F1C /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
-			productName = CachedAsyncImage;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C0E6484D27DD7171005B78C5 /* Project object */;
 }
